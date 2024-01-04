@@ -1,6 +1,8 @@
 
 import java.util.Scanner;
 
+import beans.FoodItemBean;
+
 public class Menu {
     private Scanner in = new Scanner(System.in);
 
@@ -31,36 +33,39 @@ public class Menu {
     }
 
     public void eatingItem() {
-        int pizza = 600;
-        int burgger = 450;
-        int roll = 250;
-        int friz = 200;
-        int broust = 350;
+        FoodItemBean pizza = new FoodItemBean("pizzaFagita", 650);
+        FoodItemBean pizza2 = new FoodItemBean("peproneiPizza", 600);
+
+        FoodItemBean burgger1 = new FoodItemBean("zingerBurgger", 405);
+        FoodItemBean roll = new FoodItemBean("biyariRoll", 250);
+        FoodItemBean friz = new FoodItemBean("friz", 200);
+        FoodItemBean broust = new FoodItemBean("chickenBroust", 350);
+
         System.out.println(
-                "(1)Pizza => Rs 600    (2)Burgger => Rs 450\n(3)Roll => Rs 250;    (4)Friz => Rs 200\n(5)Broust => Rs 350");
+                "(1)Pizza fagita => Rs 650    (2)Pepronei Pizza => 600\n(3)Burgger => Rs 450         (4)Roll => Rs 250;    \n(5)Friz => Rs 200            (6)Chicken Broust => Rs 350");
         int selectEat = in.nextInt();
 
         switch (selectEat) {
             case 1:
-                selectEat = pizza;
-                quantity(pizza);
+                quantity(pizza.price);
                 break;
             case 2:
-                selectEat = burgger;
-                quantity(burgger);
+                quantity(pizza2.price);
                 break;
             case 3:
-                selectEat = roll;
-                quantity(roll);
+
+                quantity(burgger1.price);
                 break;
             case 4:
-                selectEat = friz;
-                quantity(friz);
+
+                quantity(roll.price);
                 break;
             case 5:
-                selectEat = broust;
-                quantity(broust);
+
+                quantity(friz.price);
                 break;
+            case 6:
+                quantity(broust.price);
             default:
                 System.out.println("Please select right option/number!");
 
@@ -70,29 +75,26 @@ public class Menu {
     }
 
     public void drinks() {
-        int colddrink = 70;
-        int fruitjuis = 120;
-        int shakes = 450;
-        int watorBotle = 60;
+        FoodItemBean pepsi = new FoodItemBean("Pepsi", 70);
+        FoodItemBean orangJuice = new FoodItemBean("Orang juice", 120);
+        FoodItemBean kitkatShake = new FoodItemBean("Kitkat Shake", 450);
+        FoodItemBean WaterBottle = new FoodItemBean("Water bottle", 60);
+
         System.out.println(
-                "(1)Colddrink => Rs 70    (2)Fruitjuis => Rs 120;\n(3)Shakes => Rs 450    (4)WatorBotle => Rs 60");
+                "(1)Colddrink => Rs 70    (2)Fruitjuis => Rs 120;\n(3)Shakes => Rs 450      (4)WatorBotle => Rs 60");
         int selectDri = in.nextInt();
         switch (selectDri) {
             case 1:
-                selectDri = colddrink;
-                quantity(selectDri);
+                quantity(pepsi.price);
                 break;
             case 2:
-                selectDri = fruitjuis;
-                quantity(fruitjuis);
+                quantity(orangJuice.price);
                 break;
             case 3:
-                selectDri = shakes;
-                quantity(shakes);
+                quantity(kitkatShake.price);
                 break;
             case 4:
-                selectDri = watorBotle;
-                quantity(watorBotle);
+                quantity(WaterBottle.price);
                 break;
             default:
                 System.out.println("Please select right option/number!");
@@ -103,23 +105,23 @@ public class Menu {
     }
 
     public void deserts() {
-        int icecream = 200;
-        int brawnie = 180;
-        int paistry = 150;
+        FoodItemBean icecream = new FoodItemBean("icecream", 200);
+        FoodItemBean brawnie = new FoodItemBean("brawnie", 180);
+        FoodItemBean paistry = new FoodItemBean("paistry", 150);
+
         System.out.println("(1)Icecream => Rs 200    (2)Brawnie => Rs 180 \n(3)Paistry => Rs 150");
         int selectDesr = in.nextInt();
         switch (selectDesr) {
             case 1:
-                selectDesr = icecream;
-                quantity(icecream);
+
+                quantity(icecream.price);
                 break;
             case 2:
-                selectDesr = brawnie;
-                quantity(brawnie);
+
+                quantity(brawnie.price);
                 break;
             case 3:
-                selectDesr = paistry;
-                quantity(paistry);
+                quantity(paistry.price);
                 break;
             default:
                 System.out.println("Please select right option/number!");
@@ -128,23 +130,24 @@ public class Menu {
     }
 
     public void salids() {
-        int russian_salid = 400;
-        int fruit_salid = 400;
-        int vegetable_salid = 250;
-        System.out.println("(1)Russian_salid => Rs400    (2)Fruit_salid => Rs 400\n(3)Vegetable_salid => Rs 250");
+        FoodItemBean russianSalid = new FoodItemBean("Russian Salid", 400);
+        FoodItemBean fruitSalid = new FoodItemBean("Fruit Salid", 400);
+        FoodItemBean vegetableSalid = new FoodItemBean("Vegetable salid", 250);
+
+        System.out.println("(1)Russiansalid => Rs400    (2)Fruitsalid => Rs 400\n(3)VegetableSsalid => Rs 250");
         int selectSalid = in.nextInt();
         switch (selectSalid) {
             case 1:
-                selectSalid = russian_salid;
-                quantity(russian_salid);
+
+                quantity(russianSalid.price);
                 break;
             case 2:
-                selectSalid = fruit_salid;
-                quantity(fruit_salid);
+
+                quantity(fruitSalid.price);
                 break;
             case 3:
-                selectSalid = vegetable_salid;
-                quantity(vegetable_salid);
+
+                quantity(vegetableSalid.price);
                 break;
             default:
                 System.out.println("Please select right option/number!");
